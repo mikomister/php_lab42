@@ -51,7 +51,7 @@ test
     <div class="task">
         <h2 class="h2-task">Task 7 | check URL</h2>
         <form name=checkURL method="POST" action="hw7/Task7.php">
-            <input type="url" id="checkURL" name="URL" placeholder="google.com" required>
+            <input type="text" id="checkURL" name="URL" placeholder="google.com" required>
             <label><input type="checkbox" name="ping" value="true"> Ping</label>
             <label><input type="checkbox" name="tracert" value="true"> Tracert</label>
             <input type="submit" value="Check it!">

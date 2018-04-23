@@ -2,11 +2,23 @@
 
 $ping = isset($_POST["ping"]);
 $tracert = isset($_POST["tracert"]);
-$url = preg_filter('/(.*:\/\/)/i', "", escapeshellcmd($_POST["URL"]));
+$url = $_POST["URL"];
 echo "<pre>";
-if($ping) Ping($url);
-if($tracert) TraceRouter($url);
+if (ValidateURL($url)) {
+    $url = escapeshellcmd($url);
+    if ($ping) Ping($url);
+    if ($tracert) TraceRouter($url);
+} else {
+    echo "<b>Invalid URL, enter a valid URL!</b>";
+}
+
 echo "</pre>";
+
+function ValidateURL($url)
+{
+    return preg_match('#^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$#s', $url);
+}
+
 
 function RunCMD($cmd)
 {
