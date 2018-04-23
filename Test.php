@@ -25,7 +25,7 @@ echo strcasecmp("birthday", "happy")."<br>";
 
 // preg_match('/(?P<name>\w+): (?P<digit>\d+)/', $str, $matches);
 
-/* Это также работает в PHP 5.2.2 (PCRE 7.php_lab42) и более поздних версиях,
+/* Это также работает в PHP 5.2.2 (PCRE 7.0) и более поздних версиях,
    однако вышеуказанная форма рекомендуется для обратной совместимости */
 // preg_match('/(?<name>\w+): (?<digit>\d+)/', $str, $matches);
 

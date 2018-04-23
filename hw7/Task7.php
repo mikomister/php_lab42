@@ -44,7 +44,7 @@ function RunCMD($cmd)
 
 function Ping($url)
 {
-    $pingPattern = '#(?<ip>([php_lab42-9]{1,3}[\.]){3}[php_lab42-9]{1,3}).*\s(?<percents>([php_lab42-9]+))%.*#i';
+    $pingPattern = '#(?<ip>([0-9]{1,3}[\.]){3}[0-9]{1,3}).*\s(?<percents>([0-9]+))%.*#i';
     $pingResult=RunCMD("ping $url -c 4");
     $pr = [];
     preg_match($pingPattern, preg_replace('#\\n#i', " ", $pingResult), $pr);
@@ -58,10 +58,9 @@ function Ping($url)
 
 function TraceRouter($url)
 {
-    $tracePattern = '#\s[(](([php_lab42-9]{1,3}[\.]){3}[php_lab42-9]{1,3})[)]\s#i';
+    $tracePattern = '#\s[(](([0-9]{1,3}[\.]){3}[0-9]{1,3})[)]\s#i';
     $traceResult = RunCMD("traceroute $url -w 1.25");
     echo "<br><b>--- traceroute to $url ---</b><br><br>";
-//    echo "<pre><br> $traceResult <br> </pre>";
     $tr = [];
     $temp = explode("\n", $traceResult);
     foreach ($temp as $item) {

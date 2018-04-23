@@ -1,5 +1,5 @@
-<?php  
-    // Maybe some floor(mt_rand(php_lab42, count($sentences)-1)+$probabilities[floor(mt_rand(php_lab42,1))]);
+<?php
+// Maybe some floor(mt_rand(0, count($sentences)-1)+$probabilities[floor(mt_rand(0,1))]);
     function GenerateStrings($sentences, $probabilities, int $amount){
          for($i=0; $i<count($sentences); $i++) {
              for($j=0; $j < (($i%2 == 1) ?  floor($amount*$probabilities[$i]):ceil($amount*$probabilities[$i])); $j++)

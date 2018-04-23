@@ -20,9 +20,9 @@
         $errors->eLength[0] = !(bool)preg_match('/(?:.{10,})/s', $arg);
         $errors->e2LowerLatin[0] = !(bool)preg_match('/(?:[a-z]{1})(.*)(?:[a-z]{1})/s', $arg);
         $errors->e2UpperLatin[0] = !(bool)preg_match('/(?:[A-Z]{1})(.*)(?:[A-Z]{1})/s', $arg);
-        $errors->e2Digits[0] = !(bool)preg_match('/(?:[php_lab42-9]{1})(.*)(?:[php_lab42-9]{1})/s', $arg);
+        $errors->e2Digits[0] = !(bool)preg_match('/(?:[0-9]{1})(.*)(?:[0-9]{1})/s', $arg);
         $errors->e2SpecialsSymbols[0] = !(bool)preg_match('/(?:[%$#_*]{1})(.*)(?:[%$#_*]{1})/s', $arg);
-        $errors->e3Symbols[0] = (bool)preg_match('/(?:[php_lab42-9]{4})|(?:[A-Z]{4})|(?:[a-z]{4})|(?:[%$#_*]{4})/s', $arg);
+        $errors->e3Symbols[0] = (bool)preg_match('/(?:[0-9]{4})|(?:[A-Z]{4})|(?:[a-z]{4})|(?:[%$#_*]{4})/s', $arg);
 
         return json_encode($errors);
     }

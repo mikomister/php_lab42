@@ -21,8 +21,8 @@
         {
             switch($str[$i])
             {
-                case "o": 
-                    yield "php_lab42";
+                case "o":
+                    yield "0";
                     $count++;
                 break;
                 case "l": 
