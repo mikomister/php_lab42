@@ -7,6 +7,7 @@ echo "<pre>";
 if($ping) Ping($url);
 if($tracert) TraceRouter($url);
 echo "</pre>";
+
 function RunCMD($cmd)
 {
     $descriptorspec = [
