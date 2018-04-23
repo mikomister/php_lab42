@@ -1,5 +1,5 @@
 <?php
-
+mb_internal_encoding("UTF-8");
 $ping = isset($_POST["ping"]);
 $tracert = isset($_POST["tracert"]);
 $url = $_POST["URL"];
@@ -30,10 +30,10 @@ function RunCMD($cmd)
 
     $process = proc_open($cmd, $descriptorspec, $pipes);
     if (is_resource($process)) {
-        $result = stream_get_contents($pipes[1]);
+        $result = mb_convert_encoding(stream_get_contents($pipes[1]), "UTF-8");
         fclose($pipes[1]);
 
-        $error = stream_get_contents($pipes[2]);
+        $error = mb_convert_encoding(stream_get_contents($pipes[2]), "UTF-8");
         fclose($pipes[2]);
         proc_close($process);
         if(empty($error))
@@ -59,7 +59,7 @@ function Ping($url)
 function TraceRouter($url)
 {
     $tracePattern = '#\s[(](([0-9]{1,3}[\.]){3}[0-9]{1,3})[)]\s#i';
-    $traceResult = RunCMD("traceroute $url -w 1.25");
+    $traceResult = RunCMD("traceroute $url -w 2");
     echo "<br><b>--- traceroute to $url ---</b><br><br>";
     $tr = [];
     $temp = explode("\n", $traceResult);
