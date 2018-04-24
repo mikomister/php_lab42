@@ -8,10 +8,16 @@
 </head>
 <body>
 <main>
+
     <!--  Test -->
     <!--    <div class="task">-->
     <!--        <a href="/Test.php">Test</a>-->
     <!--    </div>-->
+
+    <!-- Task 9 -->
+    <div class="task">
+        <a class="linkToTask" href="./hw9/Task9.php">Task 9 | Разруливание ошибок </a>
+    </div>
 
     <!-- Task 8 -->
     <div class="task">

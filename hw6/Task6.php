@@ -6,48 +6,41 @@
  * Time: 20:20
  */
 
-    function TranscodeStringsFile(string $pathToINIFile="Task6.ini"){
-        $settings = parse_ini_file($pathToINIFile, true, INI_SCANNER_TYPED);
-        $symbols = [];
-        $srcStrings = file($settings["main"]["filename"], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        foreach ($srcStrings as $value) {
-            if(preg_match('/^'.$settings["first_rule"]["symbol"].'/s', $value))
-            {
-                //к сожалению я так и не понял почему не сработал модификатор INI_SCANNER_TYPED в parse_ini_file
-                if($settings["first_rule"]["upper"]=="true")
-                    echo strtoupper($value);
-                else
-                    echo strtolower($value);
+function TranscodeStringsFile(string $pathToINIFile = "Task6.ini")
+{
+    $settings = parse_ini_file($pathToINIFile, true, INI_SCANNER_TYPED);
+    $srcStrings = file($settings["main"]["filename"], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-            }
-            elseif(preg_match('/^'.$settings["second_rule"]["symbol"].'/s', $value))
-            {
-                if($settings["second_rule"]["direction"]=="+")
-                    echo ReplaceNumbers($value, 1);
-                else
-                    echo ReplaceNumbers($value, -1);
-            }
-            elseif (preg_match('/^'.$settings["third_rule"]["symbol"].'/s', $value))
-            {
-                echo preg_replace('/'.$settings["third_rule"]["delete"].'/s', "", $value);
-            }
+    foreach ($srcStrings as $value) {
+        if (strpos($value, $settings["first_rule"]["symbol"]) === 0) {
+            if ($settings["first_rule"]["upper"] == "true")
+                echo strtoupper($value);
             else
-                echo $value;
-            echo "<br>";
-        }
-    }
-    function ReplaceNumbers(string $str,int $increment)
-    {
-        for($i=0; $i<strlen($str);$i++)
-        {
-            if(ctype_digit($str[$i]))
-            {
-                $str[$i] = ($str[$i]+$increment) % 10;
-            }
-        }
-        return $str;
-    }
-    TranscodeStringsFile();
-    // print_r(parse_ini_file("Task6.ini", true, INI_SCANNER_TYPED));
+                echo strtolower($value);
 
+        } elseif (strpos($value, $settings["second_rule"]["symbol"]) === 0) {
+            if ($settings["second_rule"]["direction"] == "+")
+                echo ReplaceNumbers($value, 1);
+            else
+                echo ReplaceNumbers($value, -1);
+        } elseif (strpos($value, $settings["third_rule"]["symbol"]) === 0) {
+            echo str_replace($settings["third_rule"]["delete"], "", $value);
+//            echo str_ireplace($settings["third_rule"]["delete"],"", $value);
+        } else
+            echo $value;
+        echo "<br>";
+    }
+}
+
+function ReplaceNumbers(string $str, int $increment)
+{
+    for ($i = 0; $i < strlen($str); $i++) {
+        if (ctype_digit($str[$i])) {
+            $str[$i] = ($str[$i] + $increment) % 10;
+        }
+    }
+    return $str;
+}
+
+TranscodeStringsFile();
 ?>

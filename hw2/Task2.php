@@ -10,7 +10,7 @@
         $result = heloReplacer($str);
         $response="";
         foreach($result as $value)
-            $response=$response.$value;
+            $response .= $value;
         return "<div class=\"notice valid\"><b>Source:</b> $str <b>Changed:</b> ".$response.", number of replaced  <b>".$result->getReturn()."<b></div>";
     }
 

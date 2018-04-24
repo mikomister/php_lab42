@@ -6,6 +6,10 @@ $url = $_POST["URL"];
 echo "<pre>";
 if (ValidateURL($url)) {
     $url = escapeshellcmd($url);
+    if ($ping == $tracert && $tracert == false) {
+        header("Location: http://$url", true, 301);
+        exit;
+    }
     if ($ping) Ping($url);
     if ($tracert) TraceRouter($url);
 } else {
