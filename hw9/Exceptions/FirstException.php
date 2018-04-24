@@ -6,7 +6,7 @@
  * Time: 20:55
  */
 
-namespace Exeptions;
+namespace Exceptions;
 
 class FirstException extends \Exception
 {
@@ -17,6 +17,6 @@ class FirstException extends \Exception
 
     public function __toString()
     {
-        return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
+        return "<b>" . end(explode("\\", get_class($this))) . " [{$this->code}]:</b> <i>{$this->message}</i><br>";
     }
 }

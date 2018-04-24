@@ -6,7 +6,7 @@
  * Time: 21:31
  */
 
-namespace Exeptions;
+namespace Exceptions;
 
 
 class SecondException extends FirstException
@@ -16,8 +16,4 @@ class SecondException extends FirstException
         parent::__construct($message, $code);
     }
 
-    public function __toString()
-    {
-        return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
-    }
 }
