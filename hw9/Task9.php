@@ -9,6 +9,7 @@
 use \Exeptions\FifthException;
 use \Exeptions\FirstException;
 use \Exeptions\FourthException;
+use \Exeptions\SecondException;
 use \Exeptions\ThirdException;
 
 spl_autoload_register(function ($className) {
@@ -24,15 +25,15 @@ try {
         $ExeptionsGenerator->$generator();
     }
 } catch (FifthException $e) {
-    echo $e;
+    echo "<br>" . $e;
 } catch (FourthException $e) {
-    echo $e;
+    echo "<br>" . $e;
 } catch (ThirdException $e) {
-    echo $e;
+    echo "<br>" . $e;
 } catch (SecondException $e) {
-    echo $e;
+    echo "<br>" . $e;
 } catch (FirstException $e) {
-    echo $e;
+    echo "<br>" . $e;
 } catch (\Exception $e) {
-    echo $e;
+    echo "<br>" . $e;
 }

@@ -9,7 +9,7 @@
 use \Exeptions\FifthException;
 use \Exeptions\FirstException;
 use \Exeptions\FourthException;
-use Exeptions\SecondException;
+use \Exeptions\SecondException;
 use \Exeptions\ThirdException;
 
 class GenerateExceptions
@@ -45,7 +45,10 @@ class GenerateExceptions
         $ex = self::LIST_OF_EXEPTIONS[$rnd];
         try {
             throw new $ex();
+        } catch (Exception $e) {
+            echo $e;
         } finally {
+
             $this->GetAnotherException($rnd);
         }
     }
@@ -56,7 +59,10 @@ class GenerateExceptions
         $ex = self::LIST_OF_EXEPTIONS[$rnd];
         try {
             throw new $ex();
+        } catch (Exception $e) {
+            echo $e;
         } finally {
+
             $this->GetAnotherException($rnd);
         }
     }
@@ -67,7 +73,10 @@ class GenerateExceptions
         $ex = self::LIST_OF_EXEPTIONS[$rnd];
         try {
             throw new $ex();
+        } catch (Exception $e) {
+            echo $e;
         } finally {
+
             $this->GetAnotherException($rnd);
         }
     }
@@ -78,7 +87,10 @@ class GenerateExceptions
         $ex = self::LIST_OF_EXEPTIONS[$rnd];
         try {
             throw new $ex();
+        } catch (Exception $e) {
+            echo $e;
         } finally {
+
             $this->GetAnotherException($rnd);
         }
     }
