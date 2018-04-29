@@ -37,7 +37,8 @@ class GenerateExceptions
     {
         try {
             $rnd = random_int(0, 4);
-            $this->GetAnotherException($rnd);
+            $ex = self::LIST_OF_EXEPTIONS[$rnd];
+            throw new $ex();
         } catch (Exception $e) {
             echo $e;
         } finally {
@@ -47,16 +48,40 @@ class GenerateExceptions
 
     public function SecondGenerator()
     {
-        $this->FirstGenerator();
+        try {
+            $rnd = random_int(0, 4);
+            $ex = self::LIST_OF_EXEPTIONS[$rnd];
+            throw new $ex();
+        } catch (Exception $e) {
+            echo $e;
+        } finally {
+            $this->GetAnotherException($rnd);
+        }
     }
 
     public function ThirdGenerator()
     {
-        $this->FirstGenerator();
+        try {
+            $rnd = random_int(0, 4);
+            $ex = self::LIST_OF_EXEPTIONS[$rnd];
+            throw new $ex();
+        } catch (Exception $e) {
+            echo $e;
+        } finally {
+            $this->GetAnotherException($rnd);
+        }
     }
 
     public function FourthGenerator()
     {
-        $this->FirstGenerator();
+        try {
+            $rnd = random_int(0, 4);
+            $ex = self::LIST_OF_EXEPTIONS[$rnd];
+            throw new $ex();
+        } catch (Exception $e) {
+            echo $e;
+        } finally {
+            $this->GetAnotherException($rnd);
+        }
     }
 }
