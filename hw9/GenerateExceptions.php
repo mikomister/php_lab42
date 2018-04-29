@@ -48,40 +48,43 @@ class GenerateExceptions
 
     public function SecondGenerator()
     {
-        try {
-            $rnd = random_int(0, 4);
-            $ex = self::LIST_OF_EXEPTIONS[$rnd];
-            throw new $ex();
-        } catch (Exception $e) {
-            echo $e;
-        } finally {
-            $this->GetAnotherException($rnd);
-        }
+        $this->FirstGenerator();
+//        try {
+//            $rnd = random_int(0, 4);
+//            $ex = self::LIST_OF_EXEPTIONS[$rnd];
+//            throw new $ex();
+//        } catch (Exception $e) {
+//            echo $e;
+//        } finally {
+//            $this->GetAnotherException($rnd);
+//        }
     }
 
     public function ThirdGenerator()
     {
-        try {
-            $rnd = random_int(0, 4);
-            $ex = self::LIST_OF_EXEPTIONS[$rnd];
-            throw new $ex();
-        } catch (Exception $e) {
-            echo $e;
-        } finally {
-            $this->GetAnotherException($rnd);
-        }
+        $this->FirstGenerator();
+//        try {
+//            $rnd = random_int(0, 4);
+//            $ex = self::LIST_OF_EXEPTIONS[$rnd];
+//            throw new $ex();
+//        } catch (Exception $e) {
+//            echo $e;
+//        } finally {
+//            $this->GetAnotherException($rnd);
+//        }
     }
 
     public function FourthGenerator()
     {
-        try {
-            $rnd = random_int(0, 4);
-            $ex = self::LIST_OF_EXEPTIONS[$rnd];
-            throw new $ex();
-        } catch (Exception $e) {
-            echo $e;
-        } finally {
-            $this->GetAnotherException($rnd);
-        }
+        $this->FirstGenerator();
+//        try {
+//            $rnd = random_int(0, 4);
+//            $ex = self::LIST_OF_EXEPTIONS[$rnd];
+//            throw new $ex();
+//        } catch (Exception $e) {
+//            echo $e;
+//        } finally {
+//            $this->GetAnotherException($rnd);
+//        }
     }
 }

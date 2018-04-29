@@ -17,6 +17,7 @@ class FirstException extends \Exception
 
     public function __toString()
     {
-        return "<b>" . end(explode("\\", get_class($this))) . " [{$this->code}]:</b> <i>{$this->message}</i><br>";
+        $temp = explode("\\", get_class($this));
+        return "<b>" . end($temp) . " [{$this->code}]:</b> <i>{$this->message}</i><br>";
     }
 }
