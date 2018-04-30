@@ -14,6 +14,11 @@
     <!--        <a href="/Test.php">Test</a>-->
     <!--    </div>-->
 
+    <!-- Task 10 -->
+    <div class="task">
+        <a class="linkToTask" href="./hw10/Task10.php">Task 10 | Календарь с перебором </a>
+    </div>
+
     <!-- Task 9 -->
     <div class="task">
         <a class="linkToTask" href="./hw9/Task9.php">Task 9 | Разруливание ошибок </a>

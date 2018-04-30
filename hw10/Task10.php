@@ -6,30 +6,19 @@
  * Time: 23:48
  */
 
-class Month implements IteratorAggregate
-{
-    private $month;
-    private $lastPreviousSunday;
+require_once "Month.php";
+$m = 4;
+$y = 2018;
+$month = new Month($m, $y);
+echo "<b>Day of Week by Number:</b><br>{$month->getDayOfWeekByDayNumber(2)}<br>";
 
-    /**
-     * Month constructor.
-     * @param $month it's the month number
-     */
-    public function __construct($month)
-    {
-        $this->$month = $month;
-        $this->$lastPreviousSunday =
-    }
+echo "<b>Show $m month:</b>";
+$month->showMonth();
+echo "<br>";
 
-    /**
-     * Retrieve an external iterator
-     * @link http://php.net/manual/en/iteratoraggregate.getiterator.php
-     * @return Traversable An instance of an object implementing <b>Iterator</b> or
-     * <b>Traversable</b>
-     * @since 5.0.0
-     */
-    public function getIterator()
-    {
-        // TODO: Implement getIterator() method.
-    }
-}
+echo "<b>Show Calendar of the specified year:</b><br>";
+$month->showCalendar();
+echo "<br>";
+
+
+
