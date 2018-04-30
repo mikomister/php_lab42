@@ -18,24 +18,10 @@ class Month implements IteratorAggregate
      */
     private function getIntervalFromLastWeekDayOfPreviousMonth(string $dayOfWeek = "Sunday")
     {
-//        echo "<pre>";
-//        var_dump($this->date);
-//        echo "<br>";
         $temp = clone $this->date;
         $date = $temp->sub(new DateInterval("P1M"));
-//        var_dump($date);
-//        echo "<br>";
         $date->modify("last $dayOfWeek of this month");
         return date_diff($this->date, $date);
-//        var_dump($date);
-//        echo "<br>";
-//    var_dump($date2);
-//
-//    var_dump($this->date->format("Y-m-d"));
-//        echo "<br>";
-//        var_dump();
-//        var_dump ((new DateTime($this->date->format("Y-m-d")))->diff(new DateTime($date2)));
-//        return ((new DateTime($this->date->format("Y-m-d")))->diff(new DateTime($date2)));
     }
 
     /**
