@@ -1,3 +1,7 @@
 [06-May-2018 23:12:13 Europe/Moscow] PHP Warning:  file_get_contents(http://test.com:5000): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 40
 [06-May-2018 23:19:44 Europe/Moscow] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 41
 [06-May-2018 23:22:21 Europe/Moscow] PHP Warning:  file_get_contents(http://test.com:5000): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 41
+[06-May-2018 23:38:25 Europe/Moscow] PHP Warning:  file_get_contents(http://127.0.0.1:8080): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 43
+[06-May-2018 23:41:27 Europe/Moscow] PHP Warning:  file_get_contents(http://127.0.0.1:8080): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 43
+[06-May-2018 23:46:01 Europe/Moscow] PHP Warning:  file_get_contents(http://127.0.0.1:8080): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 44
+[07-May-2018 00:07:56 Europe/Moscow] PHP Warning:  file_get_contents(http://localhost:8080/hw4/Task4.php): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 76

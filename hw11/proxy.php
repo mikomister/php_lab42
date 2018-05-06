@@ -14,23 +14,60 @@ if (!isset($_SESSION["task11"])) {
     $_SESSION["task11"] = $_POST["strsToJSON"];
 }
 
-//function copyHeaders(): string
-//{
-//    $resultHeaders = "";
-//    foreach (getallheaders() as $key => $value) {
-////        if($key == Content-Length)
-//        $resultHeaders .= "$key: $value\r\n";
-//    }
-//    return $resultHeaders;
-//}
+//echo $_POST["strsToJSON"];
+
+function copyHeaders(): string
+{
+    $resultHeaders = "";
+    foreach (getallheaders() as $key => $value) {
+        $resultHeaders .= "$key: $value\r\n";
+    }
+    return $resultHeaders;
+}
+
+function get_web_page($url)
+{
+    $options = array(
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POST => true,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HEADER => false,
+        CURLOPT_POSTFIELDS => array("strsToJSON" => $_POST["strsToJSON"]),
+        CURLOPT_ENCODING => "UTF-8",
+    );
+
+    $ch = curl_init($url);
+    curl_setopt_array($ch, $options);
+    $content = curl_exec($ch);
+    $err = curl_errno($ch);
+    $errmsg = curl_error($ch);
+    $header = curl_getinfo($ch);
+    curl_close($ch);
+
+    $header['errno'] = $err;
+    $header['errmsg'] = $errmsg;
+    $header['content'] = $content;
+    return $header;
+}
 
 $cl = strlen($_POST["strsToJSON"]);
 $context_options = array(
     'http' => array(
         'method' => 'POST',
         'header' => 'Content-type: application/x-www-form-urlencoded',
-        'content' => $_POST["strsToJSON"],
+        'content' => array("strsToJSON" => $_POST["strsToJSON"]),
     )
 );
+
+//$context_options = array(
+//    'http' => array(
+//        'method' => 'POST',
+//        'header' => copyHeaders(),
+//        'content' => array ("strsToJSON"=>$_POST["strsToJSON"]),
+//    )
+//);
+//
 $context = stream_context_create($context_options);
-echo(file_get_contents("http://127.0.0.1:8080", false, $context));
+echo(file_get_contents("http://localhost:8080/hw4/Task4.php", false, $context));
+
+//echo get_web_page("http://localhost:8080/hw4/Task4.php")["content"];

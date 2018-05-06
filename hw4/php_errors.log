@@ -1,0 +1,4 @@
+[07-May-2018 00:07:56 Europe/Moscow] PHP Notice:  Undefined index: strsToJSON in /home/mister/Документы/PHP Projects/php_lab42/hw4/Task4.php on line 4
+[07-May-2018 00:07:56 Europe/Moscow] PHP Warning:  A non-numeric value encountered in /home/mister/Документы/PHP Projects/php_lab42/hw4/Task4.php on line 16
+[07-May-2018 00:07:56 Europe/Moscow] PHP Warning:  A non-numeric value encountered in /home/mister/Документы/PHP Projects/php_lab42/hw4/Task4.php on line 25
+[07-May-2018 00:07:56 Europe/Moscow] PHP Warning:  Division by zero in /home/mister/Документы/PHP Projects/php_lab42/hw4/Task4.php on line 25
