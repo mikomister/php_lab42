@@ -14,6 +14,11 @@
     <!--        <a href="/Test.php">Test</a>-->
     <!--    </div>-->
 
+    <!-- Task 11 -->
+    <div class="task">
+        <a class="linkToTask" href="./hw11/Task11.php">Task 11 | Прокси обёртка </a>
+    </div>
+
     <!-- Task 10 -->
     <div class="task">
         <a class="linkToTask" href="./hw10/Task10.php">Task 10 | Календарь с перебором </a>

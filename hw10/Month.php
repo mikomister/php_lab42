@@ -89,8 +89,8 @@ class Month implements IteratorAggregate
             }
             if ($day->format("D") == "Sun")
                 $final .= "<br>";
-
-            $res .= $day->format("d") . $final;
+            $d = $day->format("j");
+            $res .= ((strlen($d) > 1) ? $d : " " . $d) . $final;
             yield $res;
         }
     }

@@ -1,6 +1,7 @@
 <?php 
     include "Generator.php";
-    $strings = explode("\n", $_POST["strsToJSON"]);
+
+$strings = explode("\n", $_POST["strsToJSON"]);
     $sum = 0;
     $data = [];
     $sentences = [];
