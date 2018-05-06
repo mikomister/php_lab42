@@ -24,17 +24,13 @@ if (!isset($_SESSION["task11"])) {
 //    return $resultHeaders;
 //}
 
-//echo  "<pre>";
-//print_r(copyHeaders());
-
 $cl = strlen($_POST["strsToJSON"]);
 $context_options = array(
     'http' => array(
         'method' => 'POST',
-        'header' => 'Content-type: application/x-www-form-urlencoded' . "Content-Length: $cl",
+        'header' => 'Content-type: application/x-www-form-urlencoded',
         'content' => $_POST["strsToJSON"],
     )
 );
-//, stream_context_create($context_options)
 $context = stream_context_create($context_options);
-echo file_get_contents("http://localhost:4000", false, $context);
+echo(file_get_contents("http://127.0.0.1:8080", false, $context));
