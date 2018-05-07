@@ -8,7 +8,8 @@ $strings = explode("\n", $_POST["strsToJSON"]);
     $weights = [];
     $probabilities = [];
 
-    function PrepareStrings(&$sentences, &$weights, &$sum, $strings){
+function PrepareStrings(&$sentences, &$weights, &$sum, $strings)
+{
         foreach ($strings as  $key => $value) {
             $words = explode(" ", $value);
             $sentences[] = array_slice($words, 0, -1);
@@ -39,5 +40,6 @@ $strings = explode("\n", $_POST["strsToJSON"]);
     }
 
     $resultJSON = json_encode(GetPreparedArray($probabilities, $data, $sentences, $weights, $sum, $strings), JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-    echo "<pre>".$resultJSON."<br><br>".CheckStringsGenerator($sentences, $probabilities, 10000)."</pre>";
+$amount = 10000;
+echo "<pre>" . $resultJSON . "<br><br>" . CheckStringsGenerator($sentences, $sum, $amount, $weights) . "</pre>";
 ?>

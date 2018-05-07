@@ -5,3 +5,6 @@
 [06-May-2018 23:41:27 Europe/Moscow] PHP Warning:  file_get_contents(http://127.0.0.1:8080): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 43
 [06-May-2018 23:46:01 Europe/Moscow] PHP Warning:  file_get_contents(http://127.0.0.1:8080): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 44
 [07-May-2018 00:07:56 Europe/Moscow] PHP Warning:  file_get_contents(http://localhost:8080/hw4/Task4.php): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 76
+[07-May-2018 00:31:11 Europe/Moscow] PHP Notice:  Undefined variable: context in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 71
+[07-May-2018 00:33:11 Europe/Moscow] PHP Warning:  file_get_contents(http://localhost:8080/hw4/Task4.php): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 71
+[07-May-2018 00:35:39 Europe/Moscow] PHP Warning:  file_get_contents(http://localhost:8080/hw4/Task4.php): failed to open stream: HTTP request failed!  in /home/mister/Документы/PHP Projects/php_lab42/hw11/proxy.php on line 71

@@ -31,8 +31,8 @@ function get_web_page($url)
         CURLOPT_CUSTOMREQUEST => "POST",
         CURLOPT_POST => true,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HEADER => false,
-        CURLOPT_POSTFIELDS => array("strsToJSON" => $_POST["strsToJSON"]),
+        CURLOPT_HEADER => copyHeaders(),
+        CURLOPT_POSTFIELDS => http_build_query(array("strsToJSON" => $_POST["strsToJSON"])),
         CURLOPT_ENCODING => "UTF-8",
     );
 
@@ -55,7 +55,7 @@ $context_options = array(
     'http' => array(
         'method' => 'POST',
         'header' => 'Content-type: application/x-www-form-urlencoded',
-        'content' => array("strsToJSON" => $_POST["strsToJSON"]),
+        'content' => http_build_query(array("strsToJSON" => $_POST["strsToJSON"])),
     )
 );
 
@@ -70,4 +70,4 @@ $context_options = array(
 $context = stream_context_create($context_options);
 echo(file_get_contents("http://localhost:8080/hw4/Task4.php", false, $context));
 
-//echo get_web_page("http://localhost:8080/hw4/Task4.php")["content"];
+// echo get_web_page("http://localhost:8080/hw4/Task4.php")["content"];
