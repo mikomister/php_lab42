@@ -10,6 +10,7 @@ namespace Logger;
 
 /**
  * Class LogObject - describes the single record data model for logging
+ *
  * @package Logger
  */
 class LogObject
@@ -20,6 +21,7 @@ class LogObject
 
     /**
      * LogObject constructor.
+     *
      * @param $logLevel - level of message to logging
      * @param $message - message to logging
      * @param $time - time

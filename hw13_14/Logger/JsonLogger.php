@@ -17,6 +17,7 @@ require_once __DIR__ . "/./LogObject.php";
 
 /**
  * Class JsonLogger - implements LoggerInterface to comply with the PSR 3 standard
+ *
  * @package Logger
  */
 class JsonLogger implements LoggerInterface
@@ -25,6 +26,7 @@ class JsonLogger implements LoggerInterface
 
     /**
      * JsonLogger constructor.
+     *
      * @param string $logFile
      */
     public function __construct(string $logFile)
@@ -160,8 +162,9 @@ class JsonLogger implements LoggerInterface
      */
     public function log($logLevel, $message, array $context = [])
     {
-        if (count($context) > 0)
+        if (count($context) > 0) {
             $message = $this->interpolate($message, $context);
+        }
         $logObj = json_encode(new LogObject($logLevel, $message)) . ",\n";
         file_put_contents($this->logFile, $logObj, FILE_APPEND);
     }
@@ -173,7 +176,7 @@ class JsonLogger implements LoggerInterface
      */
     private function interpolate($message, array $context = [])
     {
-        foreach ($context as $key => $val) {
+        foreach ($context as $key) {
             $context["{" . $key . "}"] = $context[$key];
             unset($context[$key]);
         }
