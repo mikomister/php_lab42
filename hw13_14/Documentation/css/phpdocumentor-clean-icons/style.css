@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'phpdocumentor-clean-icons';
-    src:url('fonts/phpdocumentor-clean-icons.eot');
-    src:url('fonts/phpdocumentor-clean-icons.eot?#iefix') format('embedded-opentype'),
-        url('fonts/phpdocumentor-clean-icons.woff') format('woff'),
-        url('fonts/phpdocumentor-clean-icons.ttf') format('truetype'),
-        url('fonts/phpdocumentor-clean-icons.svg#phpdocumentor-clean-icons') format('svg');
+    src: url('fonts/phpdocumentor-clean-icons.eot');
+    src: url('fonts/phpdocumentor-clean-icons.eot?#iefix') format('embedded-opentype'),
+    url('fonts/phpdocumentor-clean-icons.woff') format('woff'),
+    url('fonts/phpdocumentor-clean-icons.ttf') format('truetype'),
+    url('fonts/phpdocumentor-clean-icons.svg#phpdocumentor-clean-icons') format('svg');
     font-weight: normal;
     font-style: normal;
 }

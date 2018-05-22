@@ -16,6 +16,11 @@
 
     <!-- Task 11 -->
     <div class="task">
+        <a class="linkToTask" href="hw13_14/Task13_14.php">Task 13-14 | Логгирование по PSR && Документация </a>
+    </div>
+
+    <!-- Task 11 -->
+    <div class="task">
         <a class="linkToTask" href="./hw11/Task11.php">Task 11 | Прокси обёртка </a>
     </div>
 

@@ -115,7 +115,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">9</span>
+                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -145,19 +145,19 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1532921712"></a>
+                <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-392025866"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1532921712" class="accordion-body collapse in">
+            <div id="namespace-392025866" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1219255891"></a>
+                <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1107403812"></a>
                                 <a href="../namespaces/Logger.html" style="margin-left: 30px; padding-left: 0">Logger</a>
             </div>
-            <div id="namespace-1219255891" class="accordion-body collapse ">
+            <div id="namespace-1107403812" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -173,19 +173,19 @@
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1782246526"></a>
+                <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1867115767"></a>
                                 <a href="../namespaces/Psr.html" style="margin-left: 30px; padding-left: 0">Psr</a>
             </div>
-            <div id="namespace-1782246526" class="accordion-body collapse ">
+            <div id="namespace-1867115767" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-194103251"></a>
+                <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-538511181"></a>
                                 <a href="../namespaces/Psr.Log.html" style="margin-left: 30px; padding-left: 0">Log</a>
             </div>
-            <div id="namespace-194103251" class="accordion-body collapse ">
+            <div id="namespace-538511181" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -329,13 +329,14 @@
             <a id="property_logFile" name="property_logFile" class="anchor"></a>
             <article class="property">
                 <h3 class="private ">$logFile</h3>
-                <pre class="signature">$logFile : </pre>
+                <pre class="signature">$logFile : string</pre>
                 <p><em></em></p>
                 
 
                                 <h4>Type</h4>
-                
-                                            </article>
+                string
+                &mdash; - Stores the file name where logs will be written
+            </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
@@ -728,14 +729,15 @@ that are not necessarily wrong.</p>
             <article class="method">
                 <h3 class="public ">log()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">log(  <span class="argument">$logLevel</span>, string  <span class="argument">$message</span>, array  <span class="argument">$context = array()</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">log(string  <span class="argument">$logLevel</span>, string  <span
+                        class="argument">$message</span>, array  <span class="argument">$context = array()</span>) : void</pre>
                 <p><em>Logs with an arbitrary level.</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                                        <td>string</td>
                                 <td>$logLevel </td>
                                 <td></td>
                             </tr>
@@ -775,7 +777,7 @@ that are not necessarily wrong.</p>
                 <h3 class="public ">__destruct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">__destruct() </pre>
-                <p><em></em></p>
+                <p><em>Finishes writing to the file before it is destroyed</em></p>
                 
 
                 
@@ -803,7 +805,7 @@ that are not necessarily wrong.</p>
                 <h3 class="private ">interpolate()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">interpolate(  <span class="argument">$message</span>, array  <span class="argument">$context = array()</span>) : mixed</pre>
-                <p><em></em></p>
+                <p><em>Performs a substitution of parameters that clarify the error.</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -816,7 +818,11 @@ that are not necessarily wrong.</p>
                                                     <tr>
                                 <td>array</td>
                                 <td>$context </td>
-                                <td></td>
+                                                        <td>
+                                                            <ul>
+                                                                <li>params to interpolate</li>
+                                                            </ul>
+                                                        </td>
                             </tr>
                                             </table>
                 
@@ -890,7 +896,7 @@ that are not necessarily wrong.</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on May 22nd, 2018 at 01:22.
+                    on May 22nd, 2018 at 17:05.
                 </section>
             </section>
         </section>

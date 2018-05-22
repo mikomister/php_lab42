@@ -10,12 +10,18 @@ use Logger\JsonLogger;
 
 require_once "./Logger/JsonLogger.php";
 
-$testLogger = new JsonLogger("Logs");
+$filename = "Logs";
+
+$testLogger = new JsonLogger($filename);
 
 $testLogger->log("Test Log", "Success!");
 $testLogger->info("Information!");
 $testLogger->warning("Warning!");
 $testLogger->error("Error!");
-$testLogger->critical("Critical Error {code}", ["code" => -1]);
+$testLogger->critical("Critical Error {code}", ["code" => 555]);
 
 unset($testLogger);
+
+echo "<pre>" . file_get_contents($filename) . "</pre>";
+
+echo "<br><a href='Documentation/index.html'>Look at the Documentation</a>";

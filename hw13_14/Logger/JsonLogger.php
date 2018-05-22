@@ -22,6 +22,9 @@ require_once __DIR__ . "/./LogObject.php";
  */
 class JsonLogger implements LoggerInterface
 {
+    /**
+     * @var string - Stores the file name where logs will be written
+     */
     private $logFile;
 
     /**
@@ -29,11 +32,12 @@ class JsonLogger implements LoggerInterface
      *
      * @param string $logFile
      */
-    public function __construct(string $logFile)
+    public function __construct(string &$logFile)
     {
         $createdTime = date("j-M-Y");
         $this->logFile = $logFile . "_" . $createdTime . ".txt";
         file_put_contents($this->logFile, "[\n");
+        $logFile = $this->logFile;
     }
 
     /**
@@ -154,7 +158,7 @@ class JsonLogger implements LoggerInterface
     /**
      * Logs with an arbitrary level.
      *
-     * @param mixed $level
+     * @param string $logLevel
      * @param string $message
      * @param array $context
      *
@@ -170,19 +174,24 @@ class JsonLogger implements LoggerInterface
     }
 
     /**
-     * @param $message
-     * @param array $context
+     * Performs a substitution of parameters that clarify the error.
+     *
+     * @param  $message
+     * @param  array $context - params to interpolate
      * @return mixed
      */
     private function interpolate($message, array $context = [])
     {
-        foreach ($context as $key) {
+        foreach ($context as $key => $val) {
             $context["{" . $key . "}"] = $context[$key];
             unset($context[$key]);
         }
         return strtr($message, $context);
     }
 
+    /**
+     *  Finishes writing to the file before it is destroyed
+     */
     public function __destruct()
     {
         $result = substr(file_get_contents($this->logFile), 0, -2);

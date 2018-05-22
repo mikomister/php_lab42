@@ -15,8 +15,19 @@ namespace Logger;
  */
 class LogObject
 {
+    /**
+     * @var string - type of error
+     */
     public $logLevel;
+
+    /**
+     * @var string - error timestamp
+     */
     public $time;
+
+    /**
+     * @var - error message
+     */
     public $message;
 
     /**
@@ -24,7 +35,6 @@ class LogObject
      *
      * @param $logLevel - level of message to logging
      * @param $message - message to logging
-     * @param $time - time
      */
     public function __construct($logLevel, $message)
     {
