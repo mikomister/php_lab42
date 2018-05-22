@@ -32,7 +32,7 @@ class Month implements IteratorAggregate
      */
     private function checkExistenceOfDay(int $dayNumber, int $month, int $year)
     {
-        if ($month > 1 && $month < 32 && $dayNumber > 0) {
+        if ($month > 0 && $month < 13 && $dayNumber > 0) {
             $days = (new DateTime("$year-$month-01 "))->format("t");
             if ($dayNumber <= $days) return true;
         }
